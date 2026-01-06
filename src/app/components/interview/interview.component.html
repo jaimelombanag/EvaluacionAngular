@@ -1,0 +1,30 @@
+
+<div class="interview-container">
+  <div class="card">
+    <h2>Pregunta de Entrevista</h2>
+    <!-- CORRECCIÓN: Se elimina el operador de encadenamiento opcional (?.) -->
+    <p class="question-text">{{ currentQuestion().text }}</p>
+
+    <textarea 
+      [(ngModel)]="userAnswer" 
+      placeholder="Escribe aquí la respuesta del candidato..."
+      rows="8"></textarea>
+
+    <div class="button-group">
+      <button (click)="submitAnswer()" [disabled]="!userAnswer">Siguiente Pregunta</button>
+      <button class="save-button" (click)="saveInterview()" [disabled]="isSaving">
+        @if (isSaving) {
+          <span class="spinner"></span>
+          <span>Guardando...</span>
+        } @else {
+          <span>Guardar Versión Final</span>
+        }
+      </button>
+    </div>
+
+    @if (saveStatusMessage) {
+      <div class="save-status-message">{{ saveStatusMessage }}</div>
+    }
+
+  </div>
+</div>

@@ -1,0 +1,220 @@
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T16:32:03.742Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T16:32:03.743Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T16:32:03.745Z] Checked if tokens are valid: false, expires at: 1767665691706
+[debug] [2026-01-06T16:32:03.745Z] Checked if tokens are valid: false, expires at: 1767665691706
+[debug] [2026-01-06T16:32:03.746Z] > refreshing access token with scopes: []
+[debug] [2026-01-06T16:32:03.749Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-01-06T16:32:03.749Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-06T16:32:03.779Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T16:32:03.780Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T16:32:03.780Z] Checked if tokens are valid: false, expires at: 1767665691706
+[debug] [2026-01-06T16:32:03.781Z] Checked if tokens are valid: false, expires at: 1767665691706
+[debug] [2026-01-06T16:32:03.781Z] > refreshing access token with scopes: []
+[debug] [2026-01-06T16:32:03.781Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-01-06T16:32:03.782Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-06T16:32:03.836Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-01-06T16:32:03.837Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-06T16:32:03.889Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo [none]
+[debug] [2026-01-06T16:32:03.892Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-01-06T16:32:03.893Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-06T16:32:03.909Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo [none]
+[debug] [2026-01-06T16:32:03.982Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo 200
+[debug] [2026-01-06T16:32:03.982Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo {"name":"projects/dashboard-lulo-39386797-86b23/billingInfo","projectId":"dashboard-lulo-39386797-86b23","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-06T16:32:04.003Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.003Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.004Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.004Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.004Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.004Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.005Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.005Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.025Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.026Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.026Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.026Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.026Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/storage.googleapis.com [none]
+[debug] [2026-01-06T16:32:04.026Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/storage.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.029Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/identitytoolkit.googleapis.com [none]
+[debug] [2026-01-06T16:32:04.029Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.031Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/fcm.googleapis.com [none]
+[debug] [2026-01-06T16:32:04.031Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/fcm.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.033Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2026-01-06T16:32:04.033Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.035Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-06T16:32:04.035Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.037Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com [none]
+[debug] [2026-01-06T16:32:04.037Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.071Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo 200
+[debug] [2026-01-06T16:32:04.071Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo {"name":"projects/dashboard-lulo-39386797-86b23/billingInfo","projectId":"dashboard-lulo-39386797-86b23","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-06T16:32:04.073Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.073Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.073Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.073Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.073Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.074Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.074Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.074Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.082Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.082Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.083Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.083Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.083Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/storage.googleapis.com [none]
+[debug] [2026-01-06T16:32:04.083Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/storage.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.086Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/identitytoolkit.googleapis.com [none]
+[debug] [2026-01-06T16:32:04.086Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.089Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/fcm.googleapis.com [none]
+[debug] [2026-01-06T16:32:04.089Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/fcm.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.092Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2026-01-06T16:32:04.092Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.094Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-06T16:32:04.094Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.097Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com [none]
+[debug] [2026-01-06T16:32:04.097Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T16:32:04.192Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com 403
+[debug] [2026-01-06T16:32:04.194Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com [omitted]
+[debug] [2026-01-06T16:32:04.226Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com 403
+[debug] [2026-01-06T16:32:04.226Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com [omitted]
+[debug] [2026-01-06T16:32:04.268Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/fcm.googleapis.com 200
+[debug] [2026-01-06T16:32:04.268Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/fcm.googleapis.com [omitted]
+[debug] [2026-01-06T16:32:04.302Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/fcm.googleapis.com 200
+[debug] [2026-01-06T16:32:04.302Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/fcm.googleapis.com [omitted]
+[debug] [2026-01-06T16:32:04.317Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-06T16:32:04.317Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-06T16:32:04.318Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/storage.googleapis.com 200
+[debug] [2026-01-06T16:32:04.318Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/storage.googleapis.com [omitted]
+[debug] [2026-01-06T16:32:04.328Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2026-01-06T16:32:04.328Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2026-01-06T16:32:04.339Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/storage.googleapis.com 200
+[debug] [2026-01-06T16:32:04.339Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/storage.googleapis.com [omitted]
+[debug] [2026-01-06T16:32:04.345Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2026-01-06T16:32:04.345Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2026-01-06T16:32:04.353Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/identitytoolkit.googleapis.com 200
+[debug] [2026-01-06T16:32:04.353Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2026-01-06T16:32:04.369Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-06T16:32:04.369Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-06T16:32:04.374Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/identitytoolkit.googleapis.com 200
+[debug] [2026-01-06T16:32:04.374Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/identitytoolkit.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T16:32:04.384Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T16:32:04.384Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T16:32:04.384Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.384Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.384Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo [none]
+[debug] [2026-01-06T16:32:04.443Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo 200
+[debug] [2026-01-06T16:32:04.444Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo {"name":"projects/dashboard-lulo-39386797-86b23/billingInfo","projectId":"dashboard-lulo-39386797-86b23","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T16:32:04.448Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T16:32:04.448Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T16:32:04.484Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T16:32:04.484Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T16:32:04.484Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.484Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.484Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo [none]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T16:32:04.494Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T16:32:04.495Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T16:32:04.495Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.495Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T16:32:04.495Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo [none]
+[debug] [2026-01-06T16:32:04.528Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo 200
+[debug] [2026-01-06T16:32:04.531Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo {"name":"projects/dashboard-lulo-39386797-86b23/billingInfo","projectId":"dashboard-lulo-39386797-86b23","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T16:32:04.540Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T16:32:04.540Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T16:32:04.554Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo 200
+[debug] [2026-01-06T16:32:04.554Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo {"name":"projects/dashboard-lulo-39386797-86b23/billingInfo","projectId":"dashboard-lulo-39386797-86b23","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T16:32:04.557Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T16:32:04.557Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T17:08:24.235Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T17:08:24.236Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T17:08:24.237Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.238Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.238Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T17:08:24.239Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T17:08:24.239Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.240Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.241Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo [none]
+[debug] [2026-01-06T17:08:24.279Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo [none]
+[debug] [2026-01-06T17:08:24.387Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo 200
+[debug] [2026-01-06T17:08:24.387Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo {"name":"projects/dashboard-lulo-39386797-86b23/billingInfo","projectId":"dashboard-lulo-39386797-86b23","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-06T17:08:24.427Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.427Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.428Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.428Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.429Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-06T17:08:24.429Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T17:08:24.432Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com [none]
+[debug] [2026-01-06T17:08:24.432Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T17:08:24.492Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo 200
+[debug] [2026-01-06T17:08:24.492Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo {"name":"projects/dashboard-lulo-39386797-86b23/billingInfo","projectId":"dashboard-lulo-39386797-86b23","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-06T17:08:24.509Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.509Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.510Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.510Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.511Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-06T17:08:24.512Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T17:08:24.515Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com [none]
+[debug] [2026-01-06T17:08:24.515Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com x-goog-quota-user=projects/dashboard-lulo-39386797-86b23
+[debug] [2026-01-06T17:08:24.563Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com 403
+[debug] [2026-01-06T17:08:24.563Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com [omitted]
+[debug] [2026-01-06T17:08:24.569Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-06T17:08:24.570Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T17:08:24.574Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T17:08:24.574Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T17:08:24.574Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.575Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.575Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo [none]
+[debug] [2026-01-06T17:08:24.630Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo 200
+[debug] [2026-01-06T17:08:24.630Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo {"name":"projects/dashboard-lulo-39386797-86b23/billingInfo","projectId":"dashboard-lulo-39386797-86b23","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T17:08:24.633Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T17:08:24.634Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T17:08:24.652Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com 403
+[debug] [2026-01-06T17:08:24.652Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseio.com [omitted]
+[debug] [2026-01-06T17:08:24.653Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-06T17:08:24.653Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/services/firebaseapphosting.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T17:08:24.678Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T17:08:24.678Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T17:08:24.679Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.679Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.679Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo [none]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T17:08:24.689Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T17:08:24.689Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T17:08:24.690Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.690Z] Checked if tokens are valid: true, expires at: 1767720722893
+[debug] [2026-01-06T17:08:24.690Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo [none]
+[debug] [2026-01-06T17:08:24.739Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo 200
+[debug] [2026-01-06T17:08:24.739Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo {"name":"projects/dashboard-lulo-39386797-86b23/billingInfo","projectId":"dashboard-lulo-39386797-86b23","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T17:08:24.747Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T17:08:24.747Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)
+[debug] [2026-01-06T17:08:24.762Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo 200
+[debug] [2026-01-06T17:08:24.764Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dashboard-lulo-39386797-86b23/billingInfo {"name":"projects/dashboard-lulo-39386797-86b23/billingInfo","projectId":"dashboard-lulo-39386797-86b23","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-06T17:08:24.767Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-06T17:08:24.768Z] > authorizing via signed-in user (jaime.lombana.gft@gmail.com)

@@ -1,0 +1,221 @@
+
+:host {
+  --gft-blue: #000033;
+  --gft-lime: #99cc00;
+  --gft-red: #D40000;
+  --gft-dark-text: #333333;
+  --gft-light-text: #666666;
+  --gft-background: #f7f7f7;
+  --gft-border: #EAEAEA;
+  --gft-white: #FFFFFF;
+
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: var(--gft-dark-text);
+  background-color: var(--gft-background);
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: var(--gft-white);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--gft-blue);
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.header-branding {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 40px;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0;
+  color: var(--gft-blue);
+  font-weight: bold;
+}
+
+.actions button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--gft-blue);
+  cursor: pointer;
+  background: transparent;
+  color: var(--gft-blue);
+  font-weight: bold;
+  transition: all .2s;
+}
+
+.actions button:hover {
+  background-color: var(--gft-blue);
+  color: var(--gft-white);
+}
+
+.actions button.primary {
+  background-color: var(--gft-blue);
+  color: var(--gft-white);
+}
+
+.actions button.primary:hover {
+  opacity: 0.9;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--gft-light-text);
+}
+
+input[type="text"], select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #FAFAFA;
+  resize: vertical;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+  border-color: var(--gft-lime);
+  background-color: var(--gft-white);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(153, 204, 0, 0.2);
+}
+
+.question-list .question-item {
+  border: 1px solid var(--gft-border);
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.question-header h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: var(--gft-dark-text);
+}
+
+.question-header summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--gft-blue);
+}
+
+.ideal-answer {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  font-style: italic;
+  border-left: 3px solid var(--gft-lime);
+}
+
+.summary, .history {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid var(--gft-border);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.history-header h3, h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--gft-dark-text);
+  font-weight: bold;
+}
+
+.history-header button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--gft-blue);
+  cursor: pointer;
+  background: transparent;
+  color: var(--gft-blue);
+  font-weight: bold;
+  transition: all .2s;
+}
+
+.history-header button:hover {
+  background: var(--gft-blue);
+  color: var(--gft-white);
+}
+
+.summary-item {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.summary-item span {
+  font-weight: bold;
+}
+
+.decision.ok { color: #009900; font-weight: bold; }
+.decision.bad { color: var(--gft-red); font-weight: bold; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.table th, .table td {
+  border-bottom: 1px solid var(--gft-border);
+  padding: 12px 10px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  color: var(--gft-light-text);
+}
+
+.delete-btn {
+  padding: 5px 10px;
+  border: 1px solid var(--gft-red);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--gft-red);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.delete-btn:hover {
+  background: var(--gft-red);
+  color: var(--gft-white);
+}
