@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "dashboard-lulo-39386797-86b23"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }

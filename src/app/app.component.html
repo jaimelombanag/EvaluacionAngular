@@ -11,85 +11,104 @@
     <img src="assets/gft-logo.svg" alt="GFT Logo" class="logo">
     <h1>Evaluación de Entrevista Técnica</h1>
   </div>
-  <section class="candidate-section">
-    <div class="control-group">
-      <label for="candidate-name">Nombre del Candidato:</label>
-      <input id="candidate-name" type="text" placeholder="Ingrese el nombre..." 
-             [value]="candidateName()" 
-             (input)="onCandidateNameChange($event)" 
-             [class.invalid]="candidateNameInvalid()">
-    </div>
-    <div class="control-group">
-      <label for="evaluator-name">Evaluador:</label>
-      <input id="evaluator-name" type="text" placeholder="Ingrese su nombre..." 
-             [value]="evaluatorName()" 
-             (input)="onEvaluatorNameChange($event)" 
-             [class.invalid]="evaluatorNameInvalid()">
-    </div>
-  </section>
 </header>
 
-<main>
-  <section class="evaluation-form">
-    <h2>Cuestionario - Backend</h2>
-    <div class="questions-list">
-      @for (question of questions(); track question.id; let i = $index) {
-        <div class="question-card" [id]="'question-' + question.id" [class.invalid]="question.isInvalid">
-          <div class="question-header">
-            <h3>{{ i + 1 }}. {{ question.question }}</h3>
-          </div>
-          
-          <div class="evaluation-controls">
-            <div class="radio-group">
-              <input type="radio" id="na-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'No aplica'" (change)="updateEvaluation(question.id, 'No aplica')">
-              <label for="na-{{question.id}}" class="label-na">No aplica</label>
-            </div>
-            <div class="radio-group">
-              <input type="radio" id="parcial-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'Parcial'" (change)="updateEvaluation(question.id, 'Parcial')">
-              <label for="parcial-{{question.id}}" class="label-parcial">Parcial</label>
-            </div>
-            <div class="radio-group">
-              <input type="radio" id="aplica-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'Aplica'" (change)="updateEvaluation(question.id, 'Aplica')">
-              <label for="aplica-{{question.id}}" class="label-aplica">Aplica</label>
-            </div>
-          </div>
+<nav class="tab-navigation">
+  <button [class.active]="activeView() === 'evaluation'" (click)="activeView.set('evaluation')">Evaluación Actual</button>
+  <button [class.active]="activeView() === 'history'" (click)="activeView.set('history')">Historial</button>
+</nav>
 
-          <div class="ideal-answer">
-            <h4>Respuesta Esperada:</h4>
-            <p>{{ question.expectedAnswer }}</p>
-          </div>
-
-          <div class="notes">
-            <label for="notes-{{ question.id }}">Notas del Entrevistador:</label>
-            <textarea id="notes-{{ question.id }}" placeholder="Añade tus observaciones..." [value]="question.notes" (input)="updateNotes(question.id, $event)"></textarea>
-          </div>
+@if (activeView() === 'evaluation') {
+  <div class="evaluation-view-container">
+    <main>
+      <section class="candidate-section">
+        <div class="control-group">
+          <label for="candidate-name">Nombre del Candidato:</label>
+          <input id="candidate-name" type="text" placeholder="Ingrese el nombre..." 
+                 [value]="candidateName()" 
+                 (input)="onCandidateNameChange($event)" 
+                 [class.invalid]="candidateNameInvalid()">
         </div>
-      }
-    </div>
-  </section>
-</main>
+        <div class="control-group">
+          <label for="evaluator-name">Evaluador:</label>
+          <input id="evaluator-name" type="text" placeholder="Ingrese su nombre..." 
+                 [value]="evaluatorName()" 
+                 (input)="onEvaluatorNameChange($event)" 
+                 [class.invalid]="evaluatorNameInvalid()">
+        </div>
+      </section>
 
-<aside class="summary">
-  <h2>Resumen de Evaluación</h2>
-  <div class="summary-content">
-    <p><strong>Candidato:</strong> {{ candidateName() }}</p>
-    <p><strong>Evaluador:</strong> {{ evaluatorName() }}</p>
+      <section class="evaluation-form">
+        <h2>Cuestionario - Backend</h2>
+        <div class="questions-list">
+          @for (question of questions(); track question.id; let i = $index) {
+            <div class="question-card" [id]="'question-' + question.id" [class.invalid]="question.isInvalid">
+              <div class="question-header">
+                <h3>{{ i + 1 }}. {{ question.question }}</h3>
+              </div>
+              
+              <div class="evaluation-controls">
+                <div class="radio-group">
+                  <input type="radio" id="na-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'No aplica'" (change)="updateEvaluation(question.id, 'No aplica')">
+                  <label for="na-{{question.id}}" class="label-na">No aplica</label>
+                </div>
+                <div class="radio-group">
+                  <input type="radio" id="parcial-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'Parcial'" (change)="updateEvaluation(question.id, 'Parcial')">
+                  <label for="parcial-{{question.id}}" class="label-parcial">Parcial</label>
+                </div>
+                <div class="radio-group">
+                  <input type="radio" id="aplica-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'Aplica'" (change)="updateEvaluation(question.id, 'Aplica')">
+                  <label for="aplica-{{question.id}}" class="label-aplica">Aplica</label>
+                </div>
+              </div>
 
-    <div class="total-score">
-      <span>Puntaje Total:</span>
-      <span class="score-value">{{ totalScore() }} / 100</span>
-    </div>
+              <div class="ideal-answer">
+                <h4>Respuesta Esperada:</h4>
+                <p>{{ question.expectedAnswer }}</p>
+              </div>
 
-    <div class="final-result" [class]="finalResult() === 'Aceptado' ? 'accepted' : 'rejected'">
-      <span>Resultado:</span>
-      <span class="result-value">{{ finalResult() }}</span>
-    </div>
+              <div class="notes">
+                <label for="notes-{{ question.id }}">Notas del Entrevistador:</label>
+                <textarea id="notes-{{ question.id }}" placeholder="Añade tus observaciones..." [value]="question.notes" (input)="updateNotes(question.id, $event)"></textarea>
+              </div>
+            </div>
+          }
+        </div>
+      </section>
+    </main>
+
+    <aside class="summary">
+      <h2>Resumen de Evaluación</h2>
+      <div class="summary-content">
+        <p><strong>Candidato:</strong> {{ candidateName() }}</p>
+        <p><strong>Evaluador:</strong> {{ evaluatorName() }}</p>
+
+        <div class="total-score">
+          <span>Puntaje Total:</span>
+          <span class="score-value">{{ totalScore() }} / 100</span>
+        </div>
+
+        <div class="final-result" [class]="finalResult() === 'Aceptado' ? 'accepted' : 'rejected'">
+          <span>Resultado:</span>
+          <span class="result-value">{{ finalResult() }}</span>
+        </div>
+      </div>
+      <div class="actions-group">
+        <!-- Mensaje de Error -->
+        @if (saveError()) {
+          <div class="error-message">
+            {{ saveError() }}
+          </div>
+        }
+
+        <button class="save-button" (click)="saveEvaluation()">Guardar Evaluación</button>
+        <button class="export-button" (click)="exportToXlsx()">Exportar Historial a .xlsx</button>
+      </div>
+    </aside>
   </div>
-  <div class="actions-group">
-    <button class="save-button" (click)="saveEvaluation()">Guardar Evaluación</button>
-    <button class="export-button" (click)="exportToXlsx()">Exportar a .xlsx</button>
-  </div>
-</aside>
+} @else if (activeView() === 'history') {
+  <app-evaluation-history></app-evaluation-history>
+}
 
 <footer>
   <p>© 2024 GFT Technical Interview Evaluation</p>

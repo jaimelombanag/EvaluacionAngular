@@ -1,14 +1,11 @@
-export interface InterviewQuestion {
-  id: number;
-  text: string;
-  idealAnswer: string;
-}
+import { InterviewQuestion } from "./interview-question.model";
 
-export interface Interview {
-  id: string;
-  date: Date;
+export interface SavedEvaluation {
+  id?: string; // Campo opcional para el ID de Firestore
+  timestamp: Date;
+  candidateName: string;
+  evaluatorName: string;
   questions: InterviewQuestion[];
-  userAnswers: string[];
-  scores: number[];
   totalScore: number;
+  finalResult: string;
 }

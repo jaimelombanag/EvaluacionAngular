@@ -1,0 +1,78 @@
+.history-container {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+  background-color: #4A90E2; /* Un azul más moderno */
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.score-accepted {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.score-rejected {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.status-accepted {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: 500;
+}
+
+.status-rejected {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: 500;
+}
+
+.no-history {
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+  padding: 2rem;
+}

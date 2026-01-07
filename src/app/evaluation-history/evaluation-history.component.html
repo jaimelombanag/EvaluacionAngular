@@ -1,0 +1,28 @@
+<div class="history-container">
+  <h2 class="history-title">Historial de Evaluaciones</h2>
+
+  <!-- Ahora leemos directamente de la señal 'evaluations' -->
+  @if (evaluations().length > 0) {
+    <div class="history-grid">
+      <!-- El bucle @for itera sobre la señal -->
+      @for (evaluation of evaluations(); track trackById) {
+        <div class="evaluation-card">
+          <div class="card-header">
+            <h3>{{ evaluation.candidateName }}</h3>
+            <span class="evaluation-date">{{ evaluation.timestamp | date: 'dd/MM/yyyy HH:mm' }}</span>
+          </div>
+          <div class="card-body">
+            <p><strong>Evaluador:</strong> {{ evaluation.evaluatorName }}</p>
+            <p><strong>Resultado Final:</strong> <span [class]="'result-' + evaluation.finalResult.toLowerCase()">{{ evaluation.finalResult }}</span></p>
+            <p><strong>Puntuación Total:</strong> {{ evaluation.totalScore }} / {{ evaluation.questions.length * 5 }}</p>
+          </div>
+        </div>
+      } @empty {
+        <p class="empty-state">Aún no se han guardado evaluaciones.</p>
+      }
+    </div>
+  } @else {
+    <!-- Este bloque se muestra tanto para el estado inicial como si el array está realmente vacío -->
+    <p class="empty-state">No hay evaluaciones guardadas para mostrar.</p>
+  }
+</div>
