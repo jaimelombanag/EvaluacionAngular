@@ -222,7 +222,7 @@ import { EvaluationDataService } from './evaluation-data.service';
       background-color: var(--white);
       border-radius: 4px 4px 0 0;
     }
-    .notification-container, .success-notification {
+    .success-notification {
       position: fixed;
       top: 20px;
       right: 20px;

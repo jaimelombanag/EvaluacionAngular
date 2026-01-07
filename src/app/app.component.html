@@ -1,10 +1,8 @@
-<div class="notification-container">
-  @if (showSuccessNotification()) {
-    <div class="success-notification">
-      ¡Evaluación de <strong>{{ lastSavedCandidateName() }}</strong> guardada con éxito!
-    </div>
-  }
-</div>
+@if (showSuccessNotification()) {
+  <div class="success-notification">
+    ¡Evaluación de <strong>{{ lastSavedCandidateName() }}</strong> guardada con éxito!
+  </div>
+}
 
 <header>
   <div class="title-group">
