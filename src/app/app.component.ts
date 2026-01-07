@@ -28,6 +28,10 @@ export class AppComponent {
   candidateNameInvalid = signal(false);
   evaluatorNameInvalid = signal(false);
 
+  // Signal for success notification
+  showSuccessNotification = signal(false);
+  lastSavedCandidateName = signal('');
+
   // Signal to store all saved evaluations
   savedEvaluations = signal<SavedEvaluation[]>([]);
 
@@ -101,7 +105,7 @@ export class AppComponent {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-      return; // Stop if names are missing
+      return;
     }
 
     const unansweredQuestions = this.questions().filter(q => q.evaluation === null);
@@ -131,8 +135,11 @@ export class AppComponent {
     };
 
     this.savedEvaluations.update(evals => [...evals, currentEvaluation]);
+    this.lastSavedCandidateName.set(currentEvaluation.candidateName);
+    this.showSuccessNotification.set(true);
+    setTimeout(() => this.showSuccessNotification.set(false), 3000); // Hide after 3 seconds
+
     this.resetForm();
-    alert(`¡Evaluación de ${currentEvaluation.candidateName} guardada!`);
   }
 
   resetForm() {

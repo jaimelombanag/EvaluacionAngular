@@ -6,6 +6,35 @@
   padding: 20px;
 }
 
+.notification-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Allows clicking through the container */
+}
+
+.success-notification {
+  background-color: #2c3e50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: 500;
+  animation: fadeInOut 3s ease-in-out forwards;
+  pointer-events: all; /* Re-enable pointer events for the notification itself */
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: translateY(-20px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+}
+
 header {
   display: flex;
   flex-direction: column;

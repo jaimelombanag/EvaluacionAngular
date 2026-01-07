@@ -1,3 +1,11 @@
+<div class="notification-container">
+  @if (showSuccessNotification()) {
+    <div class="success-notification">
+      ¡Evaluación de <strong>{{ lastSavedCandidateName() }}</strong> guardada con éxito!
+    </div>
+  }
+</div>
+
 <header>
   <div class="title-group">
     <img src="assets/gft-logo.svg" alt="GFT Logo" class="logo">
