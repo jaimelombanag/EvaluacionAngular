@@ -88,6 +88,13 @@ export class AppComponent {
       return;
     }
 
+    // Check if all questions have been evaluated
+    const allQuestionsAnswered = this.questions().every(q => q.evaluation !== null);
+    if (!allQuestionsAnswered) {
+      alert('Por favor, complete la evaluación de todas las preguntas antes de guardar.');
+      return;
+    }
+
     // Create a record of the current evaluation
     const currentEvaluation: SavedEvaluation = {
       timestamp: new Date(), // Capture the current date and time
