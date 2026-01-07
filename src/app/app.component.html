@@ -71,7 +71,10 @@
       <span class="result-value">{{ finalResult() }}</span>
     </div>
   </div>
-  <button class="export-button" (click)="exportToXlsx()">Exportar a .xlsx</button>
+  <div class="actions-group">
+    <button class="save-button" (click)="saveEvaluation()">Guardar Evaluación</button>
+    <button class="export-button" (click)="exportToXlsx()">Exportar a .xlsx</button>
+  </div>
 </aside>
 
 <footer>

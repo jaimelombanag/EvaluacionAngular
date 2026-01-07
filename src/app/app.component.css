@@ -226,19 +226,37 @@ main {
   font-size: 20px;
 }
 
-.export-button {
+.actions-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.save-button, .export-button {
   display: block;
   width: 100%;
   padding: 12px;
-  margin-top: 20px;
-  background-color: #000;
-  color: white;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.save-button {
+  background-color: #343a40;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #23272b;
+}
+
+.export-button {
+  background-color: #000;
+  color: white;
+  margin-top: 0;
 }
 
 .export-button:hover {

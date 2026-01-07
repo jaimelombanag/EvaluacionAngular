@@ -3,6 +3,15 @@ import { InterviewQuestion } from './models/interview-question.model';
 import { BACKEND_QUESTIONS } from './questions/backend-questions';
 import * as XLSX from 'xlsx';
 
+// Interface for a completed evaluation record
+interface SavedEvaluation {
+  candidateName: string;
+  evaluatorName: string;
+  questions: InterviewQuestion[];
+  totalScore: number;
+  finalResult: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,11 +23,18 @@ export class AppComponent {
   evaluatorName = signal('');
   questions = signal<InterviewQuestion[]>([]);
 
+  // Signal to store all saved evaluations
+  savedEvaluations = signal<SavedEvaluation[]>([]);
+
   totalScore = computed(() => {
-    const total = this.questions().reduce((acc, q) => acc + q.score, 0);
-    const maxScore = this.questions().length * 20;
-    if (maxScore === 0) return 0; // Avoid division by zero
-    return Math.round((total / maxScore) * 100);
+    const evaluatedQuestions = this.questions().filter(q => q.evaluation !== 'No aplica');
+    if (evaluatedQuestions.length === 0) return 0; // Avoid division by zero
+
+    const total = evaluatedQuestions.reduce((acc, q) => acc + q.score, 0);
+    const maxPossibleScore = evaluatedQuestions.length * 20;
+    if (maxPossibleScore === 0) return 0;
+
+    return Math.round((total / maxPossibleScore) * 100);
   });
 
   finalResult = computed(() => {
@@ -30,7 +46,8 @@ export class AppComponent {
   }
 
   loadQuestions() {
-    this.questions.set(BACKEND_QUESTIONS.map(q => ({ ...q })));
+    // Create a deep copy to avoid modifying the original constant
+    this.questions.set(JSON.parse(JSON.stringify(BACKEND_QUESTIONS)));
   }
 
   onCandidateNameChange(event: Event) {
@@ -64,25 +81,66 @@ export class AppComponent {
     );
   }
 
+  saveEvaluation() {
+    if (!this.candidateName().trim()) {
+      alert('Por favor, ingrese el nombre del candidato antes de guardar.');
+      return;
+    }
+
+    // Create a record of the current evaluation
+    const currentEvaluation: SavedEvaluation = {
+      candidateName: this.candidateName(),
+      evaluatorName: this.evaluatorName(),
+      questions: this.questions(),
+      totalScore: this.totalScore(),
+      finalResult: this.finalResult()
+    };
+
+    // Add the current evaluation to the saved list
+    this.savedEvaluations.update(evals => [...evals, currentEvaluation]);
+
+    // Reset the form for the next evaluation
+    this.resetForm();
+
+    alert(`¡Evaluación de ${currentEvaluation.candidateName} guardada!`);
+  }
+
+  resetForm() {
+    this.candidateName.set('');
+    this.evaluatorName.set(''); // Optionally reset evaluator too
+    this.loadQuestions(); // Reset questions to their initial state
+  }
+
   exportToXlsx() {
-    const evaluationData = [
-      ['Nombre del Candidato', this.candidateName()],
-      ['Fecha', new Date().toLocaleDateString()],
-      ['Evaluador', this.evaluatorName()],
-      [],
-      ['Pregunta', 'Evaluación', 'Notas'],
-      ...this.questions().map(q => [q.question, q.evaluation, q.notes]),
-      [],
-      ['Puntaje Final', this.totalScore()],
-      ['Resultado', this.finalResult()]
-    ];
+    const evaluationsToExport = this.savedEvaluations();
+    if (evaluationsToExport.length === 0) {
+      alert('No hay evaluaciones guardadas para exportar. Por favor, guarde al menos una evaluación.');
+      return;
+    }
 
-    const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(evaluationData);
+    // Create a flat structure for the Excel sheet
+    const exportData = evaluationsToExport.map(ev => {
+      const row: {[key: string]: any} = {
+        'Candidato': ev.candidateName,
+        'Evaluador': ev.evaluatorName,
+        'Puntaje Total': ev.totalScore,
+        'Resultado Final': ev.finalResult,
+      };
+
+      // Add each question's notes as a separate column
+      ev.questions.forEach(q => {
+        const questionKey = `Notas - ${q.question.substring(0, 30)}...`;
+        row[questionKey] = q.notes;
+      });
+
+      return row;
+    });
+
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(exportData);
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Evaluacion');
+    XLSX.utils.book_append_sheet(wb, ws, 'Resumen de Evaluaciones');
 
-    // Sanitize candidate name for the filename
-    const safeName = this.candidateName().replace(/[^a-z0-9]/gi, '_').toLowerCase();
-    XLSX.writeFile(wb, `evaluacion_${safeName || 'sin_nombre'}.xlsx`);
+    // Export the file
+    XLSX.writeFile(wb, `resumen_evaluaciones_gft.xlsx`);
   }
 }
