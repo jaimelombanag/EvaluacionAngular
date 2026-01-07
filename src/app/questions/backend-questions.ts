@@ -1,36 +1,44 @@
+import { InterviewQuestion } from '../models/interview-question.model';
 
-// Definición de la estructura para una pregunta de entrevista
-export interface InterviewQuestion {
-  id: string; // <-- ¡EL CAMPO QUE FALTABA!
-  text: string;
-  idealAnswer: string;
-}
-
-// Array con las preguntas de backend para la evaluación
 export const BACKEND_QUESTIONS: InterviewQuestion[] = [
   {
-    id: 'solid',
-    text: '¿Puedes explicar los principios SOLID?',
-    idealAnswer: 'El candidato debe ser capaz de nombrar y explicar cada uno de los cinco principios (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) y dar un ejemplo práctico de al menos uno de ellos.'
+    id: 1,
+    question: 'Describe la diferencia entre una API RESTful y una API SOAP.',
+    expectedAnswer: 'REST es un estilo arquitectónico que utiliza los métodos estándar de HTTP (GET, POST, PUT, DELETE) y se basa en recursos, mientras que SOAP es un protocolo con un formato de mensaje XML estricto. REST es generalmente más ligero y flexible.',
+    evaluation: null,
+    score: 0,
+    notes: ''
   },
   {
-    id: 'cqrs',
-    text: '¿Qué es CQRS y en qué escenario lo usarías?',
-    idealAnswer: 'Explicar que CQRS significa Command Query Responsibility Segregation. Se usa para separar los modelos de escritura (Commands) de los de lectura (Queries). Ideal para sistemas complejos con altos requerimientos de rendimiento en lectura y/o escritura, donde un único modelo no es eficiente.'
+    id: 2,
+    question: '¿Qué son los microservicios y qué ventajas ofrecen sobre una arquitectura monolítica?',
+    expectedAnswer: 'Los microservicios son un enfoque arquitectónico en el que una aplicación se estructura como una colección de servicios pequeños, autónomos y débilmente acoplados. Sus ventajas incluyen escalabilidad independiente, resiliencia (un fallo no detiene todo el sistema), y flexibilidad tecnológica.',
+    evaluation: null,
+    score: 0,
+    notes: ''
   },
   {
-    id: 'rest_graphql',
-    text: 'Compara y contrasta REST con GraphQL.',
-    idealAnswer: 'REST es un estilo arquitectónico basado en recursos y verbos HTTP, tiende a tener múltiples endpoints y puede sufrir de over/under-fetching. GraphQL es un lenguaje de consulta que usa un único endpoint, permite al cliente solicitar exactamente los datos que necesita, evitando el over/under-fetching. REST es más simple de cachear a nivel de HTTP.'
+    id: 3,
+    question: 'Explica el propósito de un ORM (Object-Relational Mapping).',
+    expectedAnswer: 'Un ORM es una técnica que crea un \"puente\" entre un modelo de objetos de un lenguaje de programación y una base de datos relacional. Permite a los desarrolladores manipular los datos de la base de datos utilizando objetos del lenguaje, en lugar de escribir consultas SQL directamente.',
+    evaluation: null,
+    score: 0,
+    notes: ''
   },
   {
-    id: 'microservices',
-    text: '¿Cuáles son los mayores desafíos al trabajar con microservicios?',
-    idealAnswer: 'Debe mencionar desafíos como la complejidad de la comunicación entre servicios (latencia, consistencia de datos), la dificultad del debugging y monitoreo distribuido, la gestión de transacciones distribuidas (sagas), y la sobrecarga operacional (deployments, versionado).'
+    id: 4,
+    question: '¿Qué es la inyección de dependencias (DI) y por qué es útil?',
+    expectedAnswer: 'La inyección de dependencias es un patrón de diseño en el que un objeto recibe sus dependencias de una fuente externa en lugar de crearlas internamente. Esto promueve el desacoplamiento, facilita las pruebas unitarias y mejora la mantenibilidad del código.',
+    evaluation: null,
+    score: 0,
+    notes: ''
   },
   {
-    id: 'db_indexing',
-    text: '¿Por qué son importantes los índices en una base de datos y cuál es su desventaja?',
-    idealAnswer: 'Los índices aceleran drásticamente las operaciones de lectura (SELECT) al permitir al motor de la base de datos encontrar rápidamente los datos sin escanear toda la tabla. La principal desventaja es que ralentizan las operaciones de escritura (INSERT, UPDATE, DELETE) porque el índice también debe ser actualizado, y ocupan espacio adicional en disco.'
+    id: 5,
+    question: '¿Cuál es la diferencia entre la autenticación y la autorización?',
+    expectedAnswer: 'La autenticación es el proceso de verificar la identidad de un usuario (quién eres), mientras que la autorización es el proceso de verificar qué recursos puede acceder un usuario autenticado (qué puedes hacer). Un ejemplo es iniciar sesión (autenticación) y luego acceder a un panel de administración (autorización).',
+    evaluation: null,
+    score: 0,
+    notes: ''
   }
 ];

@@ -1,53 +1,33 @@
-
-import { Component, computed, signal } from '@angular/core';
-import { BACKEND_QUESTIONS, InterviewQuestion } from './questions/backend-questions';
-
-// Definimos los posibles estados de la evaluación para una pregunta
-type EvaluationStatus = 'No aplica' | 'Parcial' | 'Aplica';
-
-// Interfaz extendida para manejar el estado de la evaluación
-interface EvaluationQuestion extends InterviewQuestion {
-  evaluation: EvaluationStatus;
-  notes: string;
-}
+import { Component, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { InterviewQuestion } from './models/interview-question.model';
+import { BACKEND_QUESTIONS } from './questions/backend-questions';
 
 @Component({
   selector: 'app-root',
-  standalone: false, // <-- AÑADIDO PARA ANULAR EL COMPORTAMIENTO STANDALONE
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  // --- Estado de la Aplicación de Evaluación ---
-  public candidateName = signal('Candidato Anónimo');
-  public seniorityLevel = signal('Semi-senior');
+  candidateName = signal('');
+  questions = signal<InterviewQuestion[]>([]);
 
-  // Mapeo de estado a puntaje
-  private scoreMap: Record<EvaluationStatus, number> = {
-    'No aplica': 0,
-    'Parcial': 5,
-    'Aplica': 10
-  };
-
-  public questions = signal<EvaluationQuestion[]>(
-    BACKEND_QUESTIONS.map(question => ({
-      ...question,
-      evaluation: 'No aplica',
-      notes: ''
-    }))
-  );
-
-  public totalScore = computed(() => {
-    return this.questions().reduce((total, question) => {
-      return total + this.scoreMap[question.evaluation];
-    }, 0);
+  totalScore = computed(() => {
+    const total = this.questions().reduce((acc, q) => acc + q.score, 0);
+    const maxScore = this.questions().length * 20;
+    return Math.round((total / maxScore) * 100);
   });
 
-  // --- Métodos manejadores de eventos ---
+  finalResult = computed(() => {
+    return this.totalScore() >= 65 ? 'Aceptado' : 'Rechazado';
+  });
 
-  onSeniorityChange(event: Event) {
-    const target = event.target as HTMLSelectElement;
-    this.seniorityLevel.set(target.value);
+  constructor() {
+    this.loadQuestions();
+  }
+
+  loadQuestions() {
+    this.questions.set(BACKEND_QUESTIONS.map(q => ({ ...q })));
   }
 
   onCandidateNameChange(event: Event) {
@@ -55,21 +35,24 @@ export class AppComponent {
     this.candidateName.set(target.value);
   }
 
-  updateEvaluation(questionId: string, status: EvaluationStatus) {
-    this.questions.update(currentQuestions => {
-      return currentQuestions.map(q =>
-        q.id === questionId ? { ...q, evaluation: status } : q
-      );
-    });
+  updateEvaluation(questionId: number, evaluation: '✅ Aplica' | '⚠️ Parcial' | '❌ No aplica') {
+    this.questions.update(qs =>
+      qs.map(q => {
+        if (q.id === questionId) {
+          let score = 0;
+          if (evaluation === '✅ Aplica') score = 20;
+          if (evaluation === '⚠️ Parcial') score = 10;
+          return { ...q, evaluation, score };
+        }
+        return q;
+      })
+    );
   }
 
-  updateNotes(questionId: string, event: Event) {
-    const textarea = event.target as HTMLTextAreaElement;
-    const newNotes = textarea.value;
-    this.questions.update(currentQuestions => {
-      return currentQuestions.map(q =>
-        q.id === questionId ? { ...q, notes: newNotes } : q
-      );
-    });
+  updateNotes(questionId: number, event: Event) {
+    const target = event.target as HTMLTextAreaElement;
+    this.questions.update(qs =>
+      qs.map(q => q.id === questionId ? { ...q, notes: target.value } : q)
+    );
   }
 }

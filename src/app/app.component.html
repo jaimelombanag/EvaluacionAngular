@@ -1,49 +1,41 @@
-
 <header>
-  <h1>Dashboard de Evaluación</h1>
+  <h1>Evaluación de Entrevista Técnica</h1>
   <div class="header-controls">
     <div class="control-group">
-      <label for="candidateName">Candidato:</label>
-      <input id="candidateName" type="text" [value]="candidateName()" (input)="onCandidateNameChange($event)">
-    </div>
-    <div class="control-group">
-      <label for="seniority">Nivel:</label>
-      <select id="seniority" [value]="seniorityLevel()" (change)="onSeniorityChange($event)">
-        <option value="Semi-senior">Semi-senior</option>
-        <option value="Senior">Senior</option>
-      </select>
+      <label for="candidate-name">Candidato:</label>
+      <input id="candidate-name" type="text" [value]="candidateName()" (input)="onCandidateNameChange($event)">
     </div>
   </div>
 </header>
 
 <main>
   <section class="evaluation-form">
-    <h2>Cuestionario - Backend ({{ seniorityLevel() }})</h2>
+    <h2>Cuestionario - Backend</h2>
     <div class="questions-list">
       @for (question of questions(); track question.id; let i = $index) {
         <div class="question-card">
           <div class="question-header">
-            <h3>{{ i + 1 }}. {{ question.text }}</h3>
+            <h3>{{ i + 1 }}. {{ question.question }}</h3>
           </div>
           
           <div class="evaluation-controls">
             <div class="radio-group">
-              <input type="radio" id="na-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'No aplica'" (change)="updateEvaluation(question.id, 'No aplica')">
-              <label for="na-{{question.id}}">No aplica</label>
+              <input type="radio" id="na-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === '❌ No aplica'" (change)="updateEvaluation(question.id, '❌ No aplica')">
+              <label for="na-{{question.id}}">❌ No aplica</label>
             </div>
             <div class="radio-group">
-              <input type="radio" id="parcial-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'Parcial'" (change)="updateEvaluation(question.id, 'Parcial')">
-              <label for="parcial-{{question.id}}">Parcial</label>
+              <input type="radio" id="parcial-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === '⚠️ Parcial'" (change)="updateEvaluation(question.id, '⚠️ Parcial')">
+              <label for="parcial-{{question.id}}">⚠️ Parcial</label>
             </div>
             <div class="radio-group">
-              <input type="radio" id="aplica-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'Aplica'" (change)="updateEvaluation(question.id, 'Aplica')">
-              <label for="aplica-{{question.id}}">Aplica</label>
+              <input type="radio" id="aplica-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === '✅ Aplica'" (change)="updateEvaluation(question.id, '✅ Aplica')">
+              <label for="aplica-{{question.id}}">✅ Aplica</label>
             </div>
           </div>
 
           <div class="ideal-answer">
-            <h4>Respuesta Ideal:</h4>
-            <p>{{ question.idealAnswer }}</p>
+            <h4>Respuesta Esperada:</h4>
+            <p>{{ question.expectedAnswer }}</p>
           </div>
 
           <div class="notes">
@@ -56,18 +48,23 @@
   </section>
 
   <aside class="summary">
-    <h2>Resumen</h2>
+    <h2>Resumen de Evaluación</h2>
     <div class="summary-content">
       <p><strong>Candidato:</strong> {{ candidateName() }}</p>
-      <p><strong>Nivel:</strong> {{ seniorityLevel() }}</p>
+      
       <div class="total-score">
         <span>Puntaje Total:</span>
-        <span class="score-value">{{ totalScore() }}</span>
+        <span class="score-value">{{ totalScore() }} / 100</span>
+      </div>
+
+      <div class="final-result" [class]="finalResult() === 'Aceptado' ? 'accepted' : 'rejected'">
+        <span>Resultado:</span>
+        <span class="result-value">{{ finalResult() }}</span>
       </div>
     </div>
   </aside>
 </main>
 
 <footer>
-  <p>Evaluación generada con Angular</p>
+  <p>© 2024 GFT Technical Interview Evaluation</p>
 </footer>
