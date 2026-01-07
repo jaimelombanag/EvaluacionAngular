@@ -5,6 +5,7 @@ import * as XLSX from 'xlsx';
 
 // Interface for a completed evaluation record
 interface SavedEvaluation {
+  timestamp: Date;
   candidateName: string;
   evaluatorName: string;
   questions: InterviewQuestion[];
@@ -89,6 +90,7 @@ export class AppComponent {
 
     // Create a record of the current evaluation
     const currentEvaluation: SavedEvaluation = {
+      timestamp: new Date(), // Capture the current date and time
       candidateName: this.candidateName(),
       evaluatorName: this.evaluatorName(),
       questions: this.questions(),
@@ -121,6 +123,7 @@ export class AppComponent {
     // Create a flat structure for the Excel sheet
     const exportData = evaluationsToExport.map(ev => {
       const row: {[key: string]: any} = {
+        'Fecha y Hora': ev.timestamp.toLocaleString('es-ES'), // Format timestamp
         'Candidato': ev.candidateName,
         'Evaluador': ev.evaluatorName,
         'Puntaje Total': ev.totalScore,
