@@ -1,0 +1,24 @@
+<div class="history-container">
+  <h2 class="history-title">Historial de Evaluaciones</h2>
+
+  @if (evaluations() && evaluations().length > 0) {
+    <div class="history-grid">
+      <!-- BUCLE @for CORREGIDO CON track trackById -->
+      @for (evaluation of evaluations(); track trackById($index, evaluation)) {
+        <div class="evaluation-card">
+          <div class="card-header">
+            <h3>{{ evaluation.candidateName }}</h3>
+            <span class="evaluation-date">{{ evaluation.timestamp | date: 'dd/MM/yyyy HH:mm' }}</span>
+          </div>
+          <div class="card-body">
+            <p><strong>Evaluador:</strong> {{ evaluation.evaluatorName }}</p>
+            <p><strong>Resultado:</strong> <span [class]="'status-' + evaluation.finalResult.toLowerCase()">{{ evaluation.finalResult }}</span></p>
+            <p><strong>PuntuaciÃ³n:</strong> {{ evaluation.totalScore }} / 100</p>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <p class="empty-state">No hay evaluaciones guardadas para mostrar.</p>
+  }
+</div>
