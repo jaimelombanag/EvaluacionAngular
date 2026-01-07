@@ -76,36 +76,36 @@
         </div>
       </section>
     </main>
-
-    <aside class="summary">
-      <h2>Resumen de Evaluación</h2>
-      <div class="summary-content">
-        <p><strong>Candidato:</strong> {{ candidateName() }}</p>
-        <p><strong>Evaluador:</strong> {{ evaluatorName() }}</p>
-
-        <div class="total-score">
-          <span>Puntaje Total:</span>
-          <span class="score-value">{{ totalScore() }} / 100</span>
-        </div>
-
-        <div class="final-result" [class]="finalResult() === 'Aceptado' ? 'accepted' : 'rejected'">
-          <span>Resultado:</span>
-          <span class="result-value">{{ finalResult() }}</span>
-        </div>
-      </div>
-      <div class="actions-group">
-        <!-- Mensaje de Error -->
-        @if (saveError()) {
-          <div class="error-message">
-            {{ saveError() }}
-          </div>
-        }
-
-        <button class="save-button" (click)="saveEvaluation()">Guardar Evaluación</button>
-        <button class="export-button" (click)="exportToXlsx()">Exportar Historial a .xlsx</button>
-      </div>
-    </aside>
   </div>
+
+  <aside class="summary">
+    <h2>Resumen de Evaluación</h2>
+    <div class="summary-content">
+      <p><strong>Candidato:</strong> {{ candidateName() }}</p>
+      <p><strong>Evaluador:</strong> {{ evaluatorName() }}</p>
+
+      <div class="total-score">
+        <span>Puntaje Total:</span>
+        <span class="score-value">{{ totalScore() }} / 100</span>
+      </div>
+
+      <div class="final-result" [class]="finalResult() === 'Aceptado' ? 'accepted' : 'rejected'">
+        <span>Resultado:</span>
+        <span class="result-value">{{ finalResult() }}</span>
+      </div>
+    </div>
+    <div class="actions-group">
+      <!-- Mensaje de Error -->
+      @if (saveError()) {
+        <div class="error-message">
+          {{ saveError() }}
+        </div>
+      }
+
+      <button class="save-button" (click)="saveEvaluation()">Guardar Evaluación</button>
+      <button class="export-button" (click)="exportToXlsx()">Exportar Historial a .xlsx</button>
+    </div>
+  </aside>
 } @else if (activeView() === 'history') {
   <app-evaluation-history></app-evaluation-history>
 }
