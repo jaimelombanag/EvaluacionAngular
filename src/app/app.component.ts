@@ -88,10 +88,13 @@ export class AppComponent {
       return;
     }
 
-    // Check if all questions have been evaluated
-    const allQuestionsAnswered = this.questions().every(q => q.evaluation !== null);
-    if (!allQuestionsAnswered) {
-      alert('Por favor, complete la evaluación de todas las preguntas antes de guardar.');
+    // Find all questions that have not been evaluated yet
+    const unansweredQuestions = this.questions().filter(q => q.evaluation === null);
+
+    if (unansweredQuestions.length > 0) {
+      const questionTitles = unansweredQuestions.map(q => `- ${q.question}`).join('\n');
+      const alertMessage = `Por favor, responda las siguientes preguntas antes de guardar:\n\n${questionTitles}`;
+      alert(alertMessage);
       return;
     }
 
