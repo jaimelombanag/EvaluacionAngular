@@ -8,13 +8,25 @@
 
 header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 15px;
   background: white;
-  padding: 15px 30px;
+  padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px;
+}
+
+.title-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 40px;
+  filter: grayscale(100%);
 }
 
 header h1 {
@@ -23,9 +35,11 @@ header h1 {
   margin: 0;
 }
 
-.header-controls {
+.candidate-section {
   display: flex;
   gap: 20px;
+  width: 100%;
+  justify-content: center;
 }
 
 .control-group {
@@ -39,23 +53,22 @@ header h1 {
   font-size: 14px;
 }
 
-.control-group input, .control-group select {
+.control-group input {
   padding: 8px 12px;
   border: 1px solid #dcdcdc;
   border-radius: 6px;
   font-size: 14px;
   transition: border-color 0.3s;
+  width: 250px;
 }
 
-.control-group input:focus, .control-group select:focus {
+.control-group input:focus {
   outline: none;
-  border-color: #4a90e2;
+  border-color: #000;
 }
 
 main {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 20px;
+  /* The grid layout has been removed */
 }
 
 .evaluation-form h2 {
@@ -105,13 +118,13 @@ main {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-size: 14px;
+  background-color: transparent;
 }
 
 .radio-group input[type="radio"]:checked + label {
-  color: white;
-  border-color: #4a90e2;
-  background-color: #4a90e2;
-  font-weight: 600;
+  border: 2px solid #000;
+  font-weight: bold;
+  color: #000;
 }
 
 .ideal-answer {
@@ -153,6 +166,7 @@ main {
   padding: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   height: fit-content;
+  margin-top: 20px;
 }
 
 .summary h2 {
@@ -184,7 +198,7 @@ main {
 .score-value {
   font-weight: bold;
   font-size: 24px;
-  color: #4a90e2;
+  color: #000;
 }
 
 .final-result {
@@ -197,19 +211,38 @@ main {
 }
 
 .final-result.accepted {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
+  background-color: #f5f5f5;
+  color: #000;
+  border: 1px solid #ccc;
 }
 
 .final-result.rejected {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
+  background-color: #e0e0e0;
+  color: #000;
+  border: 1px solid #9e9e9e;
 }
 
 .result-value {
   font-size: 20px;
+}
+
+.export-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.export-button:hover {
+  background-color: #333;
 }
 
 footer {

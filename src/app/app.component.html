@@ -1,11 +1,18 @@
 <header>
-  <h1>Evaluación de Entrevista Técnica</h1>
-  <div class="header-controls">
-    <div class="control-group">
-      <label for="candidate-name">Candidato:</label>
-      <input id="candidate-name" type="text" [value]="candidateName()" (input)="onCandidateNameChange($event)">
-    </div>
+  <div class="title-group">
+    <img src="assets/gft-logo.svg" alt="GFT Logo" class="logo">
+    <h1>Evaluación de Entrevista Técnica</h1>
   </div>
+  <section class="candidate-section">
+    <div class="control-group">
+      <label for="candidate-name">Nombre del Candidato:</label>
+      <input id="candidate-name" type="text" placeholder="Ingrese el nombre..." [value]="candidateName()" (input)="onCandidateNameChange($event)">
+    </div>
+    <div class="control-group">
+      <label for="evaluator-name">Evaluador:</label>
+      <input id="evaluator-name" type="text" placeholder="Ingrese su nombre..." [value]="evaluatorName()" (input)="onEvaluatorNameChange($event)">
+    </div>
+  </section>
 </header>
 
 <main>
@@ -20,16 +27,16 @@
           
           <div class="evaluation-controls">
             <div class="radio-group">
-              <input type="radio" id="na-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === '❌ No aplica'" (change)="updateEvaluation(question.id, '❌ No aplica')">
-              <label for="na-{{question.id}}">❌ No aplica</label>
+              <input type="radio" id="na-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'No aplica'" (change)="updateEvaluation(question.id, 'No aplica')">
+              <label for="na-{{question.id}}" class="label-na">No aplica</label>
             </div>
             <div class="radio-group">
-              <input type="radio" id="parcial-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === '⚠️ Parcial'" (change)="updateEvaluation(question.id, '⚠️ Parcial')">
-              <label for="parcial-{{question.id}}">⚠️ Parcial</label>
+              <input type="radio" id="parcial-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'Parcial'" (change)="updateEvaluation(question.id, 'Parcial')">
+              <label for="parcial-{{question.id}}" class="label-parcial">Parcial</label>
             </div>
             <div class="radio-group">
-              <input type="radio" id="aplica-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === '✅ Aplica'" (change)="updateEvaluation(question.id, '✅ Aplica')">
-              <label for="aplica-{{question.id}}">✅ Aplica</label>
+              <input type="radio" id="aplica-{{question.id}}" name="eval-{{question.id}}" [checked]="question.evaluation === 'Aplica'" (change)="updateEvaluation(question.id, 'Aplica')">
+              <label for="aplica-{{question.id}}" class="label-aplica">Aplica</label>
             </div>
           </div>
 
@@ -46,24 +53,26 @@
       }
     </div>
   </section>
-
-  <aside class="summary">
-    <h2>Resumen de Evaluación</h2>
-    <div class="summary-content">
-      <p><strong>Candidato:</strong> {{ candidateName() }}</p>
-      
-      <div class="total-score">
-        <span>Puntaje Total:</span>
-        <span class="score-value">{{ totalScore() }} / 100</span>
-      </div>
-
-      <div class="final-result" [class]="finalResult() === 'Aceptado' ? 'accepted' : 'rejected'">
-        <span>Resultado:</span>
-        <span class="result-value">{{ finalResult() }}</span>
-      </div>
-    </div>
-  </aside>
 </main>
+
+<aside class="summary">
+  <h2>Resumen de Evaluación</h2>
+  <div class="summary-content">
+    <p><strong>Candidato:</strong> {{ candidateName() }}</p>
+    <p><strong>Evaluador:</strong> {{ evaluatorName() }}</p>
+
+    <div class="total-score">
+      <span>Puntaje Total:</span>
+      <span class="score-value">{{ totalScore() }} / 100</span>
+    </div>
+
+    <div class="final-result" [class]="finalResult() === 'Aceptado' ? 'accepted' : 'rejected'">
+      <span>Resultado:</span>
+      <span class="result-value">{{ finalResult() }}</span>
+    </div>
+  </div>
+  <button class="export-button" (click)="exportToXlsx()">Exportar a .xlsx</button>
+</aside>
 
 <footer>
   <p>© 2024 GFT Technical Interview Evaluation</p>
