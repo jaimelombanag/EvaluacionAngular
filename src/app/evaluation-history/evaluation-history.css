@@ -1,0 +1,89 @@
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.export-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--secondary-text);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.export-button:hover {
+  background-color: var(--primary-text);
+}
+
+.history-container {
+  padding: 20px;
+}
+
+.history-title {
+  margin: 0;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.evaluation-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary-text);
+}
+
+.evaluation-date {
+  font-size: 0.85rem;
+  color: var(--subtle-text);
+  white-space: nowrap;
+}
+
+.card-body p {
+  margin: 0 0 10px 0;
+  color: var(--secondary-text);
+}
+
+.card-body p:last-child {
+  margin-bottom: 0;
+}
+
+.status-aceptado {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.status-rechazado {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--subtle-text);
+  font-size: 1.1rem;
+}

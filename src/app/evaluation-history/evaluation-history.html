@@ -1,9 +1,11 @@
 <div class="history-container">
-  <h2 class="history-title">Historial de Evaluaciones</h2>
+  <div class="history-header">
+    <h2 class="history-title">Historial de Evaluaciones</h2>
+    <button (click)="exportToXlsx()" class="export-button">Exportar a .xlsx</button>
+  </div>
 
   @if (evaluations() && evaluations().length > 0) {
     <div class="history-grid">
-      <!-- BUCLE @for CORREGIDO CON track trackById -->
       @for (evaluation of evaluations(); track trackById($index, evaluation)) {
         <div class="evaluation-card">
           <div class="card-header">
@@ -13,7 +15,7 @@
           <div class="card-body">
             <p><strong>Evaluador:</strong> {{ evaluation.evaluatorName }}</p>
             <p><strong>Resultado:</strong> <span [class]="'status-' + evaluation.finalResult.toLowerCase()">{{ evaluation.finalResult }}</span></p>
-            <p><strong>PuntuaciÃ³n:</strong> {{ evaluation.totalScore }} / 100</p>
+            <p><strong>Puntuación:</strong> {{ evaluation.totalScore }} / 100</p>
           </div>
         </div>
       }

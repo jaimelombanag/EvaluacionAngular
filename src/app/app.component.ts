@@ -1,10 +1,8 @@
 import { Component, signal, computed, ChangeDetectionStrategy, ElementRef, Renderer2, inject, NgZone, ChangeDetectorRef, effect, PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { InterviewQuestion } from './models/interview-question.model';
 import { SavedEvaluation } from './models/interview.model';
 import { BACKEND_QUESTIONS } from './questions/backend-questions';
-import * as XLSX from 'xlsx';
 import { EvaluationHistoryComponent } from './evaluation-history/evaluation-history'; // RUTA CORREGIDA
 import { v4 as uuidv4 } from 'uuid';
 import { EvaluationDataService } from './evaluation-data.service';
@@ -291,7 +289,7 @@ export class AppComponent {
 
   finalResult = computed(() => this.totalScore() >= 65 ? 'Aceptado' : 'Rechazado');
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor() {
     this.loadQuestions();
   }
 
@@ -386,46 +384,5 @@ export class AppComponent {
     this.evaluatorNameInvalid.set(false);
     this.loadQuestions();
     this.saveError.set(null);
-  }
-
-  async exportToXlsx() {
-    if (!isPlatformBrowser(this.platformId)) {
-        return;
-    }
-
-    this.evaluationDataService.getEvaluations().subscribe(evaluations => {
-        if (!evaluations || evaluations.length === 0) {
-            console.warn('No hay evaluaciones para exportar.');
-            return;
-        }
-
-        // 1. PREPARAR DATOS CON EL FORMATO REQUERIDO
-        const exportData = evaluations.map(evaluation => {
-            const rowData: { [key: string]: any } = {
-                'Candidato': evaluation.candidateName,
-                'Evaluador': evaluation.evaluatorName,
-                'Fecha': evaluation.timestamp,
-                'Puntuación Total': evaluation.totalScore,
-                'Resultado Final': evaluation.finalResult,
-            };
-
-            evaluation.questions.forEach(question => {
-                // Columna para la evaluación (Aplica/Parcial/No aplica)
-                rowData[question.question] = question.evaluation;
-                // Columna adyacente para los comentarios
-                rowData[`Comentarios - ${question.question}`] = question.notes;
-            });
-
-            return rowData;
-        });
-
-        // 2. CREAR HOJA DE CÁLCULO Y LIBRO
-        const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(exportData);
-        const workbook: XLSX.WorkBook = { Sheets: { 'Evaluaciones': worksheet }, SheetNames: ['Evaluaciones'] };
-
-        // 3. GENERAR Y DESCARGAR ARCHIVO EXCEL
-        const fileName = `Historial_Evaluaciones_${new Date().toISOString().slice(0, 10)}.xlsx`;
-        XLSX.writeFile(workbook, fileName);
-    });
   }
 }
