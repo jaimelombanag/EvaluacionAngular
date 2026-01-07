@@ -5,4 +5,5 @@ export interface InterviewQuestion {
   evaluation: 'Aplica' | 'Parcial' | 'No aplica' | null;
   score: number;
   notes: string;
+  isInvalid?: boolean; // To track validation state
 }

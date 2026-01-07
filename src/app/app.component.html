@@ -6,11 +6,17 @@
   <section class="candidate-section">
     <div class="control-group">
       <label for="candidate-name">Nombre del Candidato:</label>
-      <input id="candidate-name" type="text" placeholder="Ingrese el nombre..." [value]="candidateName()" (input)="onCandidateNameChange($event)">
+      <input id="candidate-name" type="text" placeholder="Ingrese el nombre..." 
+             [value]="candidateName()" 
+             (input)="onCandidateNameChange($event)" 
+             [class.invalid]="candidateNameInvalid()">
     </div>
     <div class="control-group">
       <label for="evaluator-name">Evaluador:</label>
-      <input id="evaluator-name" type="text" placeholder="Ingrese su nombre..." [value]="evaluatorName()" (input)="onEvaluatorNameChange($event)">
+      <input id="evaluator-name" type="text" placeholder="Ingrese su nombre..." 
+             [value]="evaluatorName()" 
+             (input)="onEvaluatorNameChange($event)" 
+             [class.invalid]="evaluatorNameInvalid()">
     </div>
   </section>
 </header>
@@ -20,7 +26,7 @@
     <h2>Cuestionario - Backend</h2>
     <div class="questions-list">
       @for (question of questions(); track question.id; let i = $index) {
-        <div class="question-card">
+        <div class="question-card" [id]="'question-' + question.id" [class.invalid]="question.isInvalid">
           <div class="question-header">
             <h3>{{ i + 1 }}. {{ question.question }}</h3>
           </div>

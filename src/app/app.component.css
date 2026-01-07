@@ -67,6 +67,11 @@ header h1 {
   border-color: #000;
 }
 
+/* Style for invalid input fields */
+.control-group input.invalid {
+  border-color: #e74c3c;
+}
+
 main {
   /* The grid layout has been removed */
 }
@@ -88,6 +93,12 @@ main {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent; /* Add transparent border for smooth transition */
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.question-card.invalid {
+  border-color: #e74c3c; /* Red border */
 }
 
 .question-header h3 {
